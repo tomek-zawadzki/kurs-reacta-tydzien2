@@ -1,11 +1,11 @@
-import CurrentTimebox from "./CurrentTimebox";
+import EditableTimebox from "./EditableTimebox";
 import TimeboxList from "./TimeboxList";
 
 function App() {
   return (
     <div className="App">
       <TimeboxList />
-      <CurrentTimebox />
+      <EditableTimebox />
     </div>
   );
 }

@@ -3,8 +3,8 @@
 }
 
 .Timebox {
-  border: 1px solid gray;
-  border-radius: 5px;
+  border: $default-border;
+  border-radius: $border-radius;
   padding: 5px;
   margin-bottom: 10px;
 }
@@ -12,10 +12,23 @@
 .TimeboxEditor,
 .TimeboxCreator {
   text-align: right;
-  border: 1px solid gray;
-  border-radius: 5px;
+  border: $default-border;
+  border-radius: $border-radius;
   padding: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+}
+
+.TimeboxCreator {
+  background-color: lighten(aqua, 40);
+}
+.TimeboxEditor {
+  background-color: darken(aquamarine, 5);
+}
+.Timebox {
+  background-color: #ffaaaa;
+}
+.CurrentTimebox {
+  background-color: #ffffaa;
 }
 
 input {
@@ -41,18 +54,26 @@ button {
 }
 
 .progress {
-  border: 1px solid orangered;
+  border: 1px solid black;
   border-radius: 5px;
   height: 25px;
   margin-bottom: 20px;
   padding: 5px;
-}
 
-.progress__bar {
-  height: 100%;
-  background-color: orangered;
-}
+  &--big {
+    height: 50px;
+  }
 
-.inactive {
-  filter: blur(2px) grayscale(1);
+  &--color-red {
+    border-color: orangered;
+  }
+
+  &__bar {
+    height: 100%;
+    background-color: black;
+  }
+
+  &--color-red &__bar {
+    background-color: orangered;
+  }
 }
