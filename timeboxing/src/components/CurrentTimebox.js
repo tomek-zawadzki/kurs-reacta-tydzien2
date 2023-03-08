@@ -16,6 +16,16 @@ class CurrentTimebox extends React.Component {
     this.togglePause = this.togglePause.bind(this);
     this.intervalId = null;
   }
+  componentDidMount() {
+    console.count("componentDidMount");
+  }
+  componentDidUpdate() {
+    console.count("componentDidUpdate");
+  }
+  componentWillUnmount() {
+    console.count("componentWillUnmount");
+    this.stopTimer();
+  }
 
   handleStart(event) {
     this.setState({
@@ -72,6 +82,7 @@ class CurrentTimebox extends React.Component {
     const secondsLeft = Math.floor(timeLeftInSeconds % 60);
     const progressInPercent =
       (elapsedTimeInSeconds / totalTimeInSeconds) * 100.0;
+
     return (
       <div className={`CurrentTimebox ${isEditable ? "inactive" : ""}`}>
         <h1>{title}</h1>
