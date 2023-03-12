@@ -1,14 +1,14 @@
 import EditableTimebox from "./EditableTimebox";
 import TimeboxList from "./TimeboxList";
-import Error from "./Error";
+import ErrorBoundry from "./ErrorBoundry";
 
 function App() {
   return (
     <div className="App">
-      <Error message="coś nie działa w aplikacji">
+      <ErrorBoundry message="coś nie działa w aplikacji">
         <TimeboxList />
         <EditableTimebox />
-      </Error>
+      </ErrorBoundry>
     </div>
   );
 }
