@@ -15,7 +15,7 @@ const NumberOrStringType = PropTypes.oneOfType([
   PropTypes.number,
   PropTypes.string,
 ]);
-Clock.protoType = {
+Clock.propTypes = {
   className: PropTypes.string.isRequired,
   minutes: NumberOrStringType.isRequired,
   seconds: NumberOrStringType.isRequired,

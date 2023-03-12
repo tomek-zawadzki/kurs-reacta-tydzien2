@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 function Timebox({ title, totalTimeInMinutes, onDelete, onEdit }) {
   if (totalTimeInMinutes <= 0) {
@@ -15,5 +16,18 @@ function Timebox({ title, totalTimeInMinutes, onDelete, onEdit }) {
     </div>
   );
 }
+const functionType = PropTypes.func;
+
+Timebox.defaultProps = {
+  onDelete: () => console.log("Domyślna funkcja obsługi usuwania"),
+  onEdit: () => console.log("Domyślna funkcja obsługi edycji"),
+};
+Timebox.propTypes = {
+  title: PropTypes.string.isRequired,
+  totalTimeInMinutes: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
+    .isRequired,
+  onDelete: functionType.isRequired,
+  onEdit: functionType.isRequired,
+};
 
 export default Timebox;
