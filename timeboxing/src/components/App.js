@@ -5,8 +5,10 @@ import Error from "./Error";
 function App() {
   return (
     <div className="App">
-      <TimeboxList />
-      <EditableTimebox />
+      <Error message="coś nie działa w aplikacji">
+        <TimeboxList />
+        <EditableTimebox />
+      </Error>
     </div>
   );
 }

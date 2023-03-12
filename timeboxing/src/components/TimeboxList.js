@@ -48,20 +48,22 @@ class TimeboxList extends React.Component {
     return (
       <>
         <TimeboxCreator onCreate={this.handleCreate} />
-        {this.state.timeboxes.map((timebox, index) => (
-          <Timebox
-            key={timebox.id}
-            title={timebox.title}
-            totalTimeInMinutes={timebox.totalTimeInMinutes}
-            onDelete={() => this.removeTimebox(index)}
-            onEdit={() =>
-              this.updateTimebox(index, {
-                ...timebox,
-                title: "updated timebox",
-              })
-            }
-          />
-        ))}
+        <Error message="coś tu jest nie tak">
+          {this.state.timeboxes.map((timebox, index) => (
+            <Timebox
+              key={timebox.id}
+              title={timebox.title}
+              totalTimeInMinutes={timebox.totalTimeInMinutes}
+              onDelete={() => this.removeTimebox(index)}
+              onEdit={() =>
+                this.updateTimebox(index, {
+                  ...timebox,
+                  title: "updated timebox",
+                })
+              }
+            />
+          ))}
+        </Error>
       </>
     );
   }
